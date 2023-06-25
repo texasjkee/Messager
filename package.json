@@ -1,0 +1,18 @@
+{
+  "name": "Messager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/texasjkee/Messager.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "moniker": "^0.1.2",
+    "socket.io": "^4.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
