@@ -19,6 +19,18 @@ io.on('connection', (socket) => {
   socket.username = Moniker.choose();
   socket.emit('set username', socket.username);
   socket.broadcast.emit('user joined', socket.username);
+  
+  socket.on('disconnect', () => {
+    socket.broadcast.emit('user left', socket.username);
+  });
+
+  socket.on('chat message', message => {
+    io.emit('chat message', {
+      name: socket.username,
+      message,
+    })
+    console.log({message});
+  });
 });
 
 server.listen(PORT, () => console.log(`Server running on ${PORT}`));
